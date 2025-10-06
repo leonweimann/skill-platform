@@ -1,0 +1,74 @@
+[project]
+name = "skill-platform"
+version = "0.1.0"
+description = "Skill platform monorepo"
+authors = [{ name = "Leon Weimann", email = "nachhilfe@leonweimann.de" }]
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.uv.workspace]
+members = [
+    "packages/skillcore",
+    "apps/skillforge",
+    "apps/skillmaker",
+    "apps/skillbot",
+    "packages/skilldb",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4.2", "ruff>=0.13.3"]
+
+[tool.ruff]
+src = ["packages", "apps"]
+target-version = "py313"
+
+line-length = 100
+indent-width = 4
+extend-exclude = [
+    "__pycache__",
+    ".venv",
+    ".pytest_cache",
+    "dist",
+    "build",
+    "*.egg-info",
+]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "skillcore",
+    "skillforge",
+    "skillmaker",
+    "skillbot",
+    "skilldb",
+]
+combine-as-imports = true
+force-single-line = false
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # import sorting
+    "UP", # pyupgrade
+    "B",  # flake8-bugbear
+]
+ignore = [
+    # "E501", # line too long
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401", # Imported but unused
+]
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["tests"]

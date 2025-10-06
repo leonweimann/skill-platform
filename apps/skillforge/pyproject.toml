@@ -1,0 +1,10 @@
+[project]
+name = "skillforge"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["skillcore", "fastapi>=0.118.0", "uvicorn>=0.37.0"]
+
+[tool.uv.sources]
+skillcore = { workspace = true }

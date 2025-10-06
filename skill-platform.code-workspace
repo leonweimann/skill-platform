@@ -1,0 +1,47 @@
+{
+  "folders": [
+    {
+      "name": "skill-platform",
+      "path": "."
+    },
+    {
+      "name": "skillcore",
+      "path": "packages/skillcore"
+    },
+    {
+      "name": "skilldb",
+      "path": "packages/skilldb"
+    },
+    {
+      "name": "skillforge",
+      "path": "apps/skillforge"
+    },
+    {
+      "name": "skillmaker",
+      "path": "apps/skillmaker"
+    },
+    {
+      "name": "skillbot",
+      "path": "apps/skillbot"
+    }
+  ],
+  "settings": {
+    // Interpreter direkt auf dein venv
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    // Pylance soll src/ finden
+    "python.analysis.extraPaths": [
+      "packages/skillcore/src",
+      "packages/skilldb/src",
+      "apps/skillforge/src",
+      "apps/skillmaker/src",
+      "apps/skillbot/src"
+    ],
+    // Optional: weniger Rauschen im Explorer
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.ruff_cache": true,
+      "**/*.egg-info": true,
+      ".venv": true
+    }
+  }
+}
