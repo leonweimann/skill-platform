@@ -5,6 +5,7 @@ description = "Skill platform monorepo"
 authors = [{ name = "Leon Weimann", email = "nachhilfe@leonweimann.de" }]
 readme = "README.md"
 requires-python = ">=3.13"
+license = { file = "LICENSE" }
 
 [tool.uv.workspace]
 members = [

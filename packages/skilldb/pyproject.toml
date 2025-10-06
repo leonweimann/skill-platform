@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Leon Weimann", email = "nachhilfe@leonweimann.de" }]
 requires-python = ">=3.13"
+license = { file = "../../LICENSE" }
 dependencies = [
     "sqlalchemy[asyncio]>=2.0",
     "asyncpg>=0.29",            # Postgres-Treiber (Neon)
